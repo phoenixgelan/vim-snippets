@@ -205,7 +205,6 @@ snippet prop
 snippet /**
 	/**
 	 * ${0:description}
-	 *
 	 */
 snippet @par
 	@param {${1:type}} ${2:name} ${0:description}
@@ -242,13 +241,17 @@ snippet de
 snippet cl "console.log"
 	console.log(${0});
 snippet clr "console.logDecorate"
-	console.log('%c', 'padding:2px;border-radius:4px;color:#fff;font-size:16px;background:red;');
+	console.log('%c ${1}', 'padding:2px;border-radius:4px;color:#fff;font-size:16px;background:green;');
+  ${0}
 snippet cd "console.debug"
 	console.debug(${0});
 snippet ce "console.error"
 	console.error(${0});
 snippet cw "console.warn"
 	console.warn(${0});
+snippet cwr "console.warnDecorate"
+	console.warn('%c ${1}', 'padding:2px;border-radius:4px;color:#fff;font-size:16px;background:orange;');
+  ${0}
 snippet ci "console.info"
 	console.info(${0});
 snippet ct "console.trace"
@@ -363,3 +366,8 @@ snippet as "async"
 	async ${0}
 snippet aw "await"
 	await ${0:${VISUAL}}
+snippet promise
+	new Promise((resolve, reject) => {
+		${0}
+		resolve();
+	});
